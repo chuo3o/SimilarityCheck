@@ -4,13 +4,15 @@ using namespace std;
 
 class SimilarityChecker {
 public:
+
 	int lengthCompare(const string A, const string B) {
-		if (A.length() == B.length()) {
-			return 60;
+		alen = A.length(); blen = B.length();
+		if (blen > alen) {
+			double temp = alen; alen = blen; blen = temp;
 		}
-		return 0;
+		return (alen >= blen * 2) ? 0 : int((1 - ((alen - blen) / blen)) * 60);
 	}
 
-	string stA{};
-	string stB{};
+	double alen;
+	double blen;
 };
