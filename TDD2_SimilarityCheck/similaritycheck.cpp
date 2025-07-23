@@ -4,8 +4,11 @@ using namespace std;
 
 class SimilarityChecker {
 public:
-	bool lengthCompare(const string A, const string B) {
-		return (A.length() == B.length());
+	int lengthCompare(const string A, const string B) {
+		if (A.length() == B.length()) {
+			return 60;
+		}
+		return 0;
 	}
 
 	string stA{};

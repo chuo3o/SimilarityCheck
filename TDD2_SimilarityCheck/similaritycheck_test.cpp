@@ -13,10 +13,11 @@ TEST_F(SimCheckFixture, init) {
 	EXPECT_EQ(1, 1);
 }
 
-TEST_F(SimCheckFixture, SameLengthCheck) {
-	EXPECT_TRUE(sim.lengthCompare("aaa", "bbb"));
+TEST_F(SimCheckFixture, SameDiffLengthCheck) {
+	EXPECT_EQ(60, sim.lengthCompare("aaa", "bbb"));
+	EXPECT_FALSE(0, sim.lengthCompare("aaaaaa", "bbb"));
 }
 
-TEST_F(SimCheckFixture, DifferentLengthCheck) {
-	EXPECT_FALSE(sim.lengthCompare("aaaa", "bbb"));
+TEST_F(SimCheckFixture, SameLengthPoint) {
+	
 }
