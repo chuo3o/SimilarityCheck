@@ -4,17 +4,19 @@
 
 using namespace testing;
 
+class SimCheckFixture : public Test {
+public:
+	SimilarityChecker sim;
+};
 
-TEST(SimilarCheck, init) {
+TEST_F(SimCheckFixture, init) {
 	EXPECT_EQ(1, 1);
 }
 
-TEST(SimilarCheck, SameLengthCheck) {
-	SimilarityChecker sim;
+TEST_F(SimCheckFixture, SameLengthCheck) {
 	EXPECT_TRUE(sim.lengthCompare("aaa", "bbb"));
 }
 
-TEST(SimilarCheck, DifferentLengthCheck) {
-	SimilarityChecker sim;
+TEST_F(SimCheckFixture, DifferentLengthCheck) {
 	EXPECT_FALSE(sim.lengthCompare("aaaa", "bbb"));
 }
