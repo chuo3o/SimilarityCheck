@@ -7,17 +7,19 @@ using namespace testing;
 class SimCheckFixture : public Test {
 public:
 	SimilarityChecker sim;
+	string a = "aaaa";
+	string b = "bb";
 };
 
 TEST_F(SimCheckFixture, init) {
 	EXPECT_EQ(1, 1);
 }
 
-TEST_F(SimCheckFixture, SameDiffLengthCheck) {
-	EXPECT_EQ(60, sim.lengthCompare("aaa", "bbb"));
-	EXPECT_FALSE(0, sim.lengthCompare("aaaaaa", "bbb"));
+TEST_F(SimCheckFixture, SameLengthCheck) {
+	EXPECT_EQ(60, sim.lengthCompare(a, a));
 }
 
-TEST_F(SimCheckFixture, SameLengthPoint) {
-	
+TEST_F(SimCheckFixture, DiffLengthCheck0) {
+	EXPECT_EQ(0, sim.lengthCompare(a, b));
+	EXPECT_EQ(0, sim.lengthCompare(b, a));
 }
