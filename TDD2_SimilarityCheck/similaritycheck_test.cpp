@@ -12,10 +12,6 @@ public:
 	string b = "bbb";
 };
 
-TEST_F(SimCheckFixture, init) {
-	EXPECT_EQ(1, 1);
-}
-
 TEST_F(SimCheckFixture, ExceptionCheck) {
 	EXPECT_THROW(sim.lengthCompare("", a), invalid_argument);
 }
