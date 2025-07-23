@@ -13,3 +13,8 @@ TEST(SimilarCheck, SameLengthCheck) {
 	SimilarityChecker sim;
 	EXPECT_TRUE(sim.lengthCompare("aaa", "bbb"));
 }
+
+TEST(SimilarCheck, DifferentLengthCheck) {
+	SimilarityChecker sim;
+	EXPECT_FALSE(sim.lengthCompare("aaaa", "bbb"));
+}
